@@ -22,6 +22,9 @@ Get plain text in txt file and create BERT vocabulary
 [https://www.analyticsvidhya.com/blog/2021/09/an-explanatory-guide-to-bert-tokenizer/](https://www.analyticsvidhya.com/blog/2021/09/an-explanatory-guide-to-bert-tokenizer/)
 
 $$
+\begin{align}
 \text{test to use Latex \quad}
 \frac{x^2+1}{y\cdot exp^2}
+\end{align}
+
 $$
