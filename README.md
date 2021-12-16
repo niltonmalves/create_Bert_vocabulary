@@ -2,7 +2,7 @@
 Get plain text in txt file and create BERT vocabulary
 
 
-#Steps:
+# Steps:
 
 1- Open txt file and remove '\n' if exists.
 

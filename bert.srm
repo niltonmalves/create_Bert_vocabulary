@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH --nodes=1           #Numero de Nos
+#SBATCH --ntasks-per-node=1 #Numero de tarefas por No
+#SBATCH --ntasks=1          #Numero de tarefas
+#SBATCH -p ict_cpu          #Fila (partition) a ser utilizada
+#SBATCH -J vocf_60         #Nome job
+#SBATCH --account=bigoilict
+#SBATCH --time=03-03:00:00
+
+
+# optional
+
+# Show nodes
+echo $SLURM_JOB_NODELIST
+nodeset -e $SLURM_JOB_NODELIST
+echo "SLURM_JOBID: " $SLURM_JOBID
+
+JOBNAME=$SLURM_JOB_NAME            # re-use the job-name specified above
+
+DockerName_SIF='/path of image file /ner_pytorch_2.1_latest.sif'
+port=XXXX
+path_Start='/path of txt file/dataset_core/download_pdfs/script/'
+
+cd $path_Start
+
+# For GPU-NODE
+echo $DockerName_SIF
+module load python/3.7.2
+echo "im here"
+singularity run --nv $DockerName_SIF python main2.py 
+echo 'job done'
